@@ -1,0 +1,36 @@
+﻿@model OOADteam16CK.Models.KhachHang
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KhachHang</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenKh)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TenKh)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MatKhau)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MatKhau)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Diem)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Diem)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.KhachHangID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

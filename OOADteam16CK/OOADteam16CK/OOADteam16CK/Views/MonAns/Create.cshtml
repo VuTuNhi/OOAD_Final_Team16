@@ -1,0 +1,62 @@
+﻿@model OOADteam16CK.Models.MonAn
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Thêm Món</h2>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                Loại
+                <select asp-for="LoaiID" class="form-control" asp-items="ViewBag.LoaiID"></select>
+            </div>
+            <div class="form-group">
+                Tên Món
+                <input asp-for="TenMon" class="form-control" />
+                <span asp-validation-for="TenMon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Đơn Giá
+                <input asp-for="DonGia" class="form-control" />
+                <span asp-validation-for="DonGia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Hình
+
+                <input type="file" name="myfile" multiple />
+                <span asp-validation-for="Hinh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Mô Tả
+                <input asp-for="MoTa" class="form-control" />
+                <span asp-validation-for="MoTa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Giảm Giá
+                <input asp-for="GiamGia" class="form-control" />
+                <span asp-validation-for="GiamGia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Trạng Thái
+                <select asp-for="TrangThaiID" class="form-control" asp-items="ViewBag.TrangThaiID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Thêm" class="btn btn-default btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index"class="btn btn-danger">Trở về</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

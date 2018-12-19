@@ -1,0 +1,23 @@
+﻿@model IEnumerable<OOADteam16CK.Models.HoaDon>
+@{
+    ViewData["Title"] = "laydshd";
+}
+<table class="table table-condensed table-striped">
+    <thead>
+        <tr>
+            <th>Bàn</th>
+            <th>Khách Hàng</th>
+            <th>Chi Tiết</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Ban.SoBan</td>
+                <td>@item.KhanhHang.TenKh</td>
+                <td><a asp-action="Edit" asp-route-id="@item.HoaDonID"class="btn btn-danger">Xem Món</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

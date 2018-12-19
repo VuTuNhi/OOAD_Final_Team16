@@ -1,0 +1,65 @@
+﻿@model List<bans>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h2>Nhà Bếp</h2>
+<a asp-action="Index" asp-controller="MonAns" class="btn btn-danger">Món ăn trong ngày</a>
+<br />
+<br />
+<div class="row">
+
+    @{
+        foreach (var item in Model)
+        { <div class="col-sm-4">
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th>
+                                Bàn
+                            </th>
+                            <th>
+                                Tên Khách Hàng
+                            </th>
+                            <th>
+                                Tên Món
+                            </th>
+                            <th>
+                                Số Lượng
+                            </th>
+
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var tmp in item.listmons)
+                        {
+
+
+                            <tr>
+                                <td>
+                                    @tmp.BanID
+                                </td>
+                                <td>
+                                    @tmp.KhachHangID
+                                </td>
+                                <td>
+                                    @tmp.MonAnId
+                                </td>
+                                <td>
+                                    @tmp.soluong
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <a asp-action="daxong" asp-controller="NhaBep"class="btn btn-danger" asp-route-MaHD="@item.MaHD">Đã xong</a>
+                </table>
+            </div>
+
+
+        }
+    }
+
+</div>

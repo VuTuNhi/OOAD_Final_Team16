@@ -1,0 +1,112 @@
+﻿@model KhachHangDatMonViewModel
+@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Montrangmieng";
+}
+<meta name="viewport" content="width=device-width" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>@ViewData["Title"] - NETCKTEAM30</title>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<link href="~/css/mycss.css" rel="stylesheet" />
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 ">
+            <ul class="nav nav-tabs">
+                <li class="active"><a asp-action="Mondactrung" asp-controller="KhachHang">Món Đặc trưng</a></li>
+                <li class="active"><a asp-action="Monkhaivi" asp-controller="KhachHang">Món Khai Vị</a></li>
+                <li class="active"><a asp-action="Monchinh" asp-controller="KhachHang">Món Chính</a></li>
+                <li class="active"><a asp-action="Montrangmieng" asp-controller="KhachHang">Món Tráng miệng</a></li>
+
+
+
+
+            </ul>
+        </div>
+
+    </div>
+</div>
+<br />
+<div class="row works" style="position:relative;z-index:1;">
+    <div class="dschonmon">
+        <h2 id="dscm">Danh Sách Món Đã Mua</h2>
+
+
+        <table class="table">
+            <thead>
+                <tr>
+
+                    <th>
+                        Tên Món Ăn
+                    </th>
+                    <th>
+                        Đơn Giá
+                    </th>
+                    <th>
+                        Số Lượng
+                    </th>
+                    <th>
+                        Giảm Giá
+                    </th>
+                    <th>
+                        Thành tiền
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.chiTietHds)
+                {
+                    <tr>
+                        <td>
+                            @item.MonAn.TenMon
+                        </td>
+                        <td>
+                            @item.DonGia .000 đ
+                        </td>
+                        <td>
+                            @item.SoLuong
+                        </td>
+                        <td>
+                            @item.GiamGia
+                        </td>
+                        <td>
+                            @item.ThanhTien
+                        </td>
+
+
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <span style="float:right; margin-right:10px;">Tổng cộng:@ViewBag.TongTien .000đ</span>
+        <br />
+        <br />
+        <a class="btn btn-danger" asp-action="xacnhanchonmon" asp-controller="KhachHang" style="float:right;"> Xác Nhận Đã Chọn Món Xong</a>
+    </div>
+    @foreach (var hh in Model.Monans)
+    {
+
+        <div class="col-sm-4 viewmonan" style="float:left;">
+            <div class="_hanghoa1">
+                <img src="~/images/@hh.Hinh" style="height:400px;" />
+                <div class="thongtinsanpham">
+                    <h4 class="tensanpham">@hh.TenMA</h4>
+                    <div class="danhmucsanpham">@hh.GiaBan .000 đ/phần</div>
+                    <form asp-action="mua" asp-controller="KhachHang" method="post">
+                        <input type="hidden" value="@hh.MaMA" name="mamon" />
+                        <button type="submit" class="btn btn-primary">Mua</button>
+                        <span>Số Lượng : <input type="number" min="1" step="1" name="soluong" /></span>
+                        @{
+                            Context.Session.Set("view", 4);
+                        }
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+</div>

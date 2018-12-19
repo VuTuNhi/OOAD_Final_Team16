@@ -1,0 +1,182 @@
+﻿body {
+}
+
+nav.navbar.navbar-default {
+    background: transparent;
+    border: 0px;
+}
+
+.headertren {
+    padding-top: 47px;
+    background-image: url('/images/logo8.1.jpg');
+    min-height: 500px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+    font-family: myriad-pro;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    background: none;
+    color: #0ee2ef;
+    font-weight: bold;
+    font-family: myriad-pro;
+}
+
+.khoitextslide {
+    margin-top: 230px;
+    font-size: 32px;
+    font-family: myriad-pro;
+    color: white;
+    font-weight: bold;
+}
+
+.d2 {
+    font-size: 40px;
+}
+
+@keyframes ditutraisang {
+    from {
+        transform: translateX(-500px);
+        opacity: 0
+    }
+
+    to {
+        transform: translateX(0px);
+        opacity: 1
+    }
+}
+
+@keyframes ditutrenxuong {
+    from {
+        transform: translateY(-300px);
+        opacity: 0
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1
+    }
+}
+
+@keyframes thunho {
+    from {
+        transform: scale(3);
+        opacity: 0
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+.navbar-header {
+    animation: thunho 1s forwards;
+}
+
+.collapse.navbar-collapse.navbar-ex1-collapse {
+    animation: ditutrenxuong 1s forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+.badongtext {
+    animation: ditutraisang 1s forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+    .badongtext.d2:hover {
+        animation: bounce 1s;
+    }
+
+._hanghoa1 {
+    display: block;
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 31px;
+}
+
+._hanghoa1:hover .thongtinsanpham {
+    display: block;
+}
+
+.thongtinsanpham {
+    position: absolute;
+    background: #15e6a4;
+    padding: 15px 10px;
+    transition: 0.2s;
+    display: none;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+}
+
+._hanghoa1 img {
+    width: 100%;
+}
+
+h4.tensanpham {
+    color: #293a1f;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.danhmucsanpham {
+    color: black;
+    font-size: 23px;
+    text-transform: none;
+    position: relative;
+    padding-top: 14px;
+}
+
+    .danhmucsanpham:after {
+        content: "";
+        width: 70px;
+        height: 5px;
+        background-color: black;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+
+.giohang {
+    width: 150px;
+    height: 40px;
+    float: right;
+    text-align: center;
+    background: #dac3c3;
+    padding: 15px;
+    padding-right: 50px;
+}
+
+.txtSearch {
+    margin-left: 450px;
+    margin-top: 10px;
+}
+
+.divtimkiem {
+    display: inline;
+}
+.dschonmon {
+    width: 33%;
+    height: 400px;
+    background-color: #10ffd0;
+    display: inline;
+    margin-bottom: 20px;
+    position: absolute;
+    z-index: 2;
+    right: 0px;
+   
+    
+}
+#dscm {
+    text-align:center;
+}

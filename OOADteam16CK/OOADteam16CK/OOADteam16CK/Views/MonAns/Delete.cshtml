@@ -1,0 +1,58 @@
+﻿@model OOADteam16CK.Models.MonAn
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Xóa Món Này?</h2>
+
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Loại
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Loai.LoaiID)
+        </dd>
+        <dt>
+           Tên Món
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TenMon)
+        </dd>
+        <dt>
+           Đơn Giá
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DonGia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinh)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Hinh)
+        </dd>
+        <dt>
+            Mô Tả
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+        <dt>
+            Giảm Giá
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GiamGia)
+        </dd>
+        
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MonAnID" />
+        <input type="submit" value="Xóa" class="btn btn-default btn btn-danger" /> |
+        <a asp-action="Index"class="btn btn-danger">Trở Về</a>
+    </form>
+</div>

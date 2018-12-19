@@ -1,0 +1,67 @@
+﻿@model IEnumerable<OOADteam16CK.Models.MonAn>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+
+<p>
+    <a asp-action="Create"class="btn btn-danger">Thêm Món Mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Loại
+            </th>
+            <th>
+                Tên Món Ăn
+            </th>
+            <th>
+                Giá
+            </th>
+            <th>
+                Hình
+            </th>
+            <th>
+                Mô tả
+            </th>
+            <th>
+                Giảm Giá
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Loai.LoaiID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenMon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonGia) .000 đ
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiamGia)
+            </td>
+           
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MonAnID"class="btn btn-danger">Chỉnh Sửa</a> |
+                <a asp-action="Details" asp-route-id="@item.MonAnID"class="btn btn-danger">Chi Tiết</a> |
+                <a asp-action="Delete" asp-route-id="@item.MonAnID"class="btn btn-danger">Xóa Món</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

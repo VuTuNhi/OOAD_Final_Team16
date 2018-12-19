@@ -1,0 +1,12 @@
+﻿@model List<HoaDon>
+@{
+    ViewData["Title"] = "Index";
+}
+<h2>Chọn Bàn muốn Thanh Toán</h2>
+
+@{ 
+    foreach(var item in Model)
+    {
+        <a asp-action="thanhtoan" asp-controller="ThuNgan" asp-route-ID="@item.BanID"class="btn btn-danger">@item.Ban.SoBan</a>
+    }
+}
